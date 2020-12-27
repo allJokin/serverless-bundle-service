@@ -1,0 +1,20 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"name": "Node.js (latest LTS)",
+	// Uncomment the next line if you want to add in default container specific settings.json values
+	// "settings":  { "workbench.colorTheme": "Quiet Light" },
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "",
+    
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "yarn-workspace-serverless-bundle",
+	"workspaceFolder": "/workspaces",
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"graphql.vscode-graphql"
+	]
+}

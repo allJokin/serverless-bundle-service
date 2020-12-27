@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  yarn-workspace-serverless-bundle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspaces
+    volumes:
+      - ..:/workspaces:cached
+      - ${HOME}${USERPROFILE}/.ssh:/root/.ssh:ro
+      - ${HOME}${USERPROFILE}/.aws:/root/.aws
+    # プロセスが終了してコンテナが終了してしまわないように
+    command: /bin/sh -c "while sleep 1000; do :; done"

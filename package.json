@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace my-package build",
+    "predeploy": "yarn build",
+    "deploy": "yarn workspace serverless-bundle-service deploy"
+  }
+}
